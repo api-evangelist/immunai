@@ -1,0 +1,92 @@
+generated: '2026-08-04'
+method: probed
+source: live HTTPS probes of every host reachable from apis.yml
+note: >-
+  No /.well-known/ document is published on any Immunai host. This file records the
+  probe result so later rounds do not re-walk the same surface; it is deliberately NOT
+  wired as a WellKnown pointer in apis.yml because nothing was found.
+hosts:
+- host: https://www.immunai.com
+  documents:
+  - path: /.well-known/security.txt
+    status: 404
+  - path: /.well-known/openid-configuration
+    status: 404
+  - path: /.well-known/oauth-authorization-server
+    status: 404
+  - path: /.well-known/oauth-protected-resource
+    status: 404
+  - path: /.well-known/api-catalog
+    status: 404
+  - path: /.well-known/ai-plugin.json
+    status: 404
+  - path: /.well-known/agent-card.json
+    status: 404
+  - path: /.well-known/agent.json
+    status: 404
+  - path: /llms.txt
+    status: 404
+- host: https://immunai.com
+  note: Redirects to https://www.immunai.com/ (HTTP 200 after redirect)
+  documents:
+  - path: /.well-known/security.txt
+    status: 404
+  - path: /.well-known/agent-card.json
+    status: 404
+  - path: /.well-known/agent.json
+    status: 404
+- host: https://portal.immunai.com
+  note: Simpplr-hosted employee intranet (third-party SaaS), not an Immunai developer portal
+  documents: []
+- host: https://api.immunai.com
+  note: >-
+    Resolves to 34.110.128.250 but the TLS handshake is reset before a certificate is
+    presented and port 80 does not answer, so no /.well-known/ path is reachable. See
+    security/immunai-domain-security.yml (finding dangling-dns-records).
+  documents:
+  - path: /.well-known/agent-card.json
+    status: null
+    result: connection-failed
+  - path: /.well-known/agent.json
+    status: null
+    result: connection-failed
+- host: https://app.immunai.com
+  note: >-
+    Resolves to 34.144.219.193 but presents a certificate for an unrelated domain
+    (CN=*.asa.com.br), so every request fails certificate validation. With validation
+    disabled the host returns 403 Forbidden for all paths. Not an Immunai surface. See
+    security/immunai-domain-security.yml (finding dangling-dns-records).
+  documents:
+  - path: /.well-known/agent-card.json
+    status: 403
+    result: cert-mismatch-then-forbidden
+  - path: /.well-known/agent.json
+    status: 403
+    result: cert-mismatch-then-forbidden
+unresolved_hosts:
+- docs.immunai.com
+- developer.immunai.com
+- platform.immunai.com
+- amica.immunai.com
+- data.immunai.com
+- status.immunai.com
+- trust.immunai.com
+- security.immunai.com
+- dev.immunai.com
+- console.immunai.com
+acquired_domains:
+- domain: nebion.com
+  note: >-
+    Acquired 2021. DNS still resolves to 95.216.38.13 but neither HTTP nor HTTPS
+    answers, so the property is offline rather than deregistered.
+- domain: genevestigator.com
+  note: >-
+    Nebion's product domain. Same state — resolves to 95.216.38.13, no service answers.
+x-evidence:
+  fetched: '2026-08-04'
+  security_contact_in_dns: 'CAA iodef mailto:security@immunai.com (see security/immunai-domain-security.yml)'
+  correction: >-
+    The prior round listed api.immunai.com and app.immunai.com as unresolved and the
+    acquired domains as no longer resolving. All four do resolve; this round probed
+    each directly and recorded the real state. The conclusion is unchanged — none
+    serves an Immunai API or a /.well-known/ document.

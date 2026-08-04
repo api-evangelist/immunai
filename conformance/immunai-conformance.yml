@@ -1,0 +1,112 @@
+generated: '2026-08-04'
+method: searched
+source: https://www.immunai.com/privacy-policy/
+docs: https://www.immunai.com/privacy-policy/
+summary: >-
+  Immunai publishes no API, so every API-level and cross-cutting web-API standard below
+  is not applicable rather than failed — there is no contract to conform to. What
+  Immunai does publish is a substantive, dated data-protection posture in its privacy
+  policy, which names the regulatory regimes it operates under and the officers
+  accountable for them. Those are recorded here as first-party claims with the page
+  they were read from.
+standards:
+- id: openapi
+  conforms: false
+  applicable: false
+  evidence: No OpenAPI or Swagger document is published on any Immunai host (see x-discovery in apis.yml).
+- id: asyncapi
+  conforms: false
+  applicable: false
+  evidence: No event, streaming or webhook surface is published.
+- id: graphql
+  conforms: false
+  applicable: false
+  evidence: No /graphql endpoint answers on any resolving Immunai host.
+- id: oauth2
+  conforms: false
+  applicable: false
+  evidence: No OAuth authorization server; /.well-known/oauth-authorization-server returns 404.
+- id: oidc
+  conforms: false
+  applicable: false
+  evidence: /.well-known/openid-configuration returns 404 on every host.
+- id: rfc9457-problem-details
+  conforms: false
+  applicable: false
+  evidence: No API responses to evaluate.
+- id: rfc9116-security-txt
+  conforms: false
+  applicable: true
+  evidence: >-
+    /.well-known/security.txt returns 404 on www.immunai.com and immunai.com. A security
+    reporting address does exist in DNS as a CAA iodef record
+    (mailto:security@immunai.com), but that is scoped to certificate misissuance and is
+    not a security.txt or a vulnerability disclosure policy.
+- id: a2a
+  conforms: false
+  applicable: false
+  evidence: /.well-known/agent-card.json and /.well-known/agent.json return 404 on every reachable host.
+- id: mcp
+  conforms: false
+  applicable: false
+  evidence: >-
+    The only MCP surface reachable is the marketing site's WordPress mcp-adapter plugin
+    at www.immunai.com/wp-json/mcp/*, which returns HTTP 401 to tools/list. That is CMS
+    administration tooling shipped by a plugin, not a product MCP server.
+- id: fhir
+  conforms: false
+  applicable: false
+  evidence: >-
+    Immunai works in single-cell multiomics and drug development, not clinical data
+    exchange, and publishes no health-data interface.
+data_protection:
+- id: gdpr
+  claimed: true
+  evidence: Named in the privacy policy as a regime Immunai operates under.
+- id: cpra
+  claimed: true
+  evidence: California Privacy Rights Act named in the privacy policy.
+- id: israeli-ppl
+  claimed: true
+  evidence: Israeli Protection of Privacy Law named in the privacy policy (Immunai has a Tel Aviv office).
+- id: swiss-fadp
+  claimed: true
+  evidence: Swiss Federal Act on Data Protection named in the privacy policy (Immunai has a Zurich office).
+- id: eu-us-data-privacy-framework
+  claimed: true
+  verified: false
+  evidence: >-
+    The privacy policy asserts participation in the EU–U.S. Data Privacy Framework, the
+    UK Extension, and the Swiss–U.S. Data Privacy Framework. This round could not
+    independently confirm the listing — dataprivacyframework.gov renders its participant
+    search client-side and its participantSearch API path returned 404 — so the claim is
+    recorded as first-party and unverified.
+certifications:
+  found: []
+  note: >-
+    No SOC 2, ISO 27001, PCI DSS, HIPAA, FedRAMP or CSA STAR certification is published
+    anywhere on immunai.com. There is no trust center; trust.immunai.com and
+    security.immunai.com do not resolve, and /trust, /security and /compliance all
+    return 404.
+accountable_contacts:
+- role: Data Protection Officer
+  name: Suzy Bartlett
+  email: privacy@immunai.com
+- role: Data Security Officer
+  name: Eli Hakimov
+  email: privacy@immunai.com
+x-pointer-decision:
+  compliance_pointer: withheld
+  reason: >-
+    A `type: Compliance` pointer is deliberately NOT emitted. Immunai publishes a
+    privacy policy naming regulatory regimes, but no audited certification and no
+    compliance or trust program page, and the Data Privacy Framework listing could not
+    be verified. Emitting Compliance on a privacy policy alone would credit a compliance
+    posture Immunai has not published. Resolve on a later round by checking the official
+    DPF participant list for Immunai; if the listing is active, Compliance becomes
+    defensible.
+x-evidence:
+  fetched: '2026-08-04'
+  url: https://www.immunai.com/privacy-policy/
+  http_status: 200
+  page_last_updated: '10 February 2026'

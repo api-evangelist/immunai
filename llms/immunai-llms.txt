@@ -1,0 +1,65 @@
+# Immunai
+
+> Immunai is a New York-headquartered biotechnology company (founded December 2018) that maps the human immune system at single-cell resolution and applies machine learning to drug discovery and development. Its central asset is AMICA (Annotated Multiomic Immune Cell Atlas), a cell-level immune knowledge base built from single-cell multiomics — RNA transcriptome, surface proteome, TCR/BCR repertoire and spatial transcriptomics — harmonized across thousands of studies covering hundreds of diseases and immune cell types, paired with an ImmunoDynamics Engine used for target discovery, preclinical evaluation and clinical trial optimization.
+
+## API surface
+
+Immunai publishes **no public API** as of 2026-08-04. There is no developer portal, no API
+documentation, no OpenAPI/AsyncAPI/GraphQL/gRPC contract, no MCP server, no A2A agent card, no
+`/.well-known/` discovery document, no first-party SDK or CLI in any public package registry, and no
+GitHub organization. The company engages through direct partnerships with biopharmaceutical companies
+and research institutions rather than a self-serve or programmatic product.
+
+Two subdomains — `api.immunai.com` and `app.immunai.com` — do publish DNS records, but neither serves
+Immunai: the first resets the TLS handshake before presenting a certificate, and the second presents a
+certificate for an unrelated domain and then returns 403. They are stale records, not API hosts, and
+should not be treated as endpoints. The only machine-readable surface on the marketing site is the
+stock WordPress REST API at `www.immunai.com/wp-json`, including a WordPress `mcp` plugin namespace
+that returns HTTP 401 to `tools/list`. That is CMS infrastructure, not an Immunai product API, and it is
+deliberately not registered in this profile.
+
+## Data protection
+
+Immunai's privacy policy (last updated 10 February 2026) names GDPR, the California Privacy Rights Act,
+the Israeli Protection of Privacy Law and the Swiss Federal Act on Data Protection, and asserts
+participation in the EU–U.S. Data Privacy Framework, its UK Extension, and the Swiss–U.S. Data Privacy
+Framework. A Data Protection Officer and a Data Security Officer are named, both reachable at
+privacy@immunai.com. No security certification (SOC 2, ISO 27001, HIPAA, PCI DSS, FedRAMP) is published,
+and there is no trust center or vulnerability disclosure policy.
+
+## Company
+
+- [Immunai](https://www.immunai.com/): Company homepage.
+- [Company](https://www.immunai.com/company/): Founding story, team, offices (New York, Tel Aviv, Prague, Zurich), acquisitions.
+- [Platform](https://www.immunai.com/platform/): The AMICA atlas and the ImmunoDynamics Engine.
+- [Solutions](https://www.immunai.com/solutions/): Target discovery, preclinical evaluation, clinical trial optimization.
+- [Collaboration](https://www.immunai.com/collaboration/): Partnering with pharma and biotech.
+- [Careers](https://www.immunai.com/careers/): Open roles.
+- [Contact](https://www.immunai.com/contact/): info@immunai.com, press@immunai.com.
+
+## Media
+
+- [Resources](https://www.immunai.com/resources/): Articles, podcasts, videos, press releases, publications.
+- [Feed](https://www.immunai.com/feed/): RSS feed for the resources stream.
+- [Press releases](https://www.immunai.com/category/press-releases/)
+- [Publications](https://www.immunai.com/category/publications/)
+- [Podcasts](https://www.immunai.com/category/podcasts/)
+- [Videos](https://www.immunai.com/category/video/)
+
+## Legal
+
+- [Privacy policy](https://www.immunai.com/privacy-policy/)
+- [Cookie notice](https://www.immunai.com/cookie-notice/)
+
+## API Evangelist profile
+
+- [apis.yml](https://raw.githubusercontent.com/api-evangelist/immunai/refs/heads/main/apis.yml): The APIs.json profile for this company.
+- [Domain security](https://raw.githubusercontent.com/api-evangelist/immunai/refs/heads/main/security/immunai-domain-security.yml): Probed TLS/HSTS/DNSSEC/CAA/SPF/DMARC posture.
+- [Well-known probe](https://raw.githubusercontent.com/api-evangelist/immunai/refs/heads/main/well-known/immunai-well-known.yml): Recorded `/.well-known/` discovery result (all 404).
+- [Conformance](https://raw.githubusercontent.com/api-evangelist/immunai/refs/heads/main/conformance/immunai-conformance.yml): Which API and data-protection standards apply, and the published data-protection posture.
+
+<!--
+generated: 2026-08-04
+method: generated
+source: apis.yml + immunai.com public pages + repo artifacts
+-->
