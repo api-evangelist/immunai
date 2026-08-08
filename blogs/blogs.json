@@ -1,0 +1,21 @@
+{
+  "repo": "immunai",
+  "feeds": [
+    {
+      "source": "https://www.immunai.com/contact/",
+      "feed_url": "https://www.immunai.com/contact/feed/",
+      "title": "",
+      "saved": 0,
+      "method": "discovered"
+    },
+    {
+      "source": "https://www.immunai.com/resources/",
+      "feed_url": "https://www.immunai.com/resources/feed/",
+      "title": "",
+      "saved": 0,
+      "method": "discovered"
+    }
+  ],
+  "post_count": 0,
+  "fetched": "2026-08-06T14:08:46Z"
+}
