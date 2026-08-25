@@ -2,6 +2,20 @@
   "repo": "immunai",
   "feeds": [
     {
+      "source": "https://www.immunai.com/contact/feed/",
+      "feed_url": "https://www.immunai.com/contact/feed/",
+      "title": "",
+      "saved": 0,
+      "method": "feed"
+    },
+    {
+      "source": "https://www.immunai.com/resources/feed/",
+      "feed_url": "https://www.immunai.com/resources/feed/",
+      "title": "",
+      "saved": 0,
+      "method": "feed"
+    },
+    {
       "source": "https://www.immunai.com/contact/",
       "feed_url": "https://www.immunai.com/contact/feed/",
       "title": "",
@@ -12,10 +26,10 @@
       "source": "https://www.immunai.com/resources/",
       "feed_url": "https://www.immunai.com/resources/feed/",
       "title": "",
-      "saved": 8,
+      "saved": 0,
       "method": "discovered"
     }
   ],
   "post_count": 8,
-  "fetched": "2026-08-15T12:11:08Z"
+  "fetched": "2026-08-22T20:20:02Z"
 }
