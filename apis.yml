@@ -13,6 +13,17 @@ description: 'Immunai is a New York-headquartered biotechnology company, founded
   no public developer portal, API documentation, machine-readable specification or
   SDKs. Offices are in New York, Tel Aviv, Prague and Zurich; the company acquired
   Dropprint Genomics (2021) and Nebion (2021).'
+deliveryModel:
+  model: unknown
+  open_source: false
+  commercial: false
+  callable_host: false
+  label: Delivery model not determined — needs a product licence on record
+  confidence: low
+  source:
+  - none
+  generated: '2026-08-28'
+  method: derived
 image: https://www.immunai.com/wp-content/uploads/2022/06/Social.png
 url: https://raw.githubusercontent.com/api-evangelist/immunai/refs/heads/main/apis.yml
 x-type: company
