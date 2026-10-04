@@ -52,7 +52,7 @@ tags:
 - Immunology
 - Drug Discovery
 - Artificial Intelligence
-- Machine-Learning
+- Machine Learning
 - Single-Cell Genomics
 - Multiomics
 - Clinical Trials
@@ -68,6 +68,7 @@ tags_raw:
 - Multiomics
 - Clinical Trials
 - Life Sciences
+- Machine-Learning
 apis: []
 maintainers:
 - FN: Kin Lane
